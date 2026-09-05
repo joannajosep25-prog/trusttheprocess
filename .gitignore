@@ -1,0 +1,45 @@
+
+# Dependencies
+node_modules/
+bower_components/
+
+# Build output
+dist/
+build/
+coverage/
+.next/
+.nuxt/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache and temporary files
+.cache/
+.parcel-cache/
+.eslintcache
+*.tmp
+
+# Runtime data
+*.pid
+*.seed
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Package manager files
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
