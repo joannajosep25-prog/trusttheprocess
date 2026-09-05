@@ -15,7 +15,7 @@ app.use(express.static('public'));
 app.post('/api/roast', async (req, res) => {
     try {
         const { image } = req.body;
-        const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
         const prompt = "Look at this person's outfit. Roast their style playfully but ruthlessly in exactly 2 to 3 sentences. Be creative.";
         
         const imageParts = [{ inlineData: { data: image, mimeType: "image/jpeg" } }];
