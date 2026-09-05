@@ -4,7 +4,7 @@ const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
@@ -15,7 +15,7 @@ app.use(express.static('public'));
 app.post('/api/roast', async (req, res) => {
     try {
         const { image } = req.body;
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
         const prompt = "Look at this person's outfit. Roast their style playfully but ruthlessly in exactly 2 to 3 sentences. Be creative.";
         
         const imageParts = [{ inlineData: { data: image, mimeType: "image/jpeg" } }];
