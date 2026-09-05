@@ -44,44 +44,31 @@ node server.js
 For Software:
 
 # Screenshots (Add at least 3)
+homepage
+<img width="1773" height="851" alt="screenshot1" src="https://github.com/user-attachments/assets/5c131f88-f55c-4241-90f2-a34271e76737" />
+outfit scanning webcam
+<img width="1853" height="863" alt="screenshot2" src="https://github.com/user-attachments/assets/2f52ee8d-5c12-496c-873d-f828931d60e2" />
+output(roast)
+<img width="1815" height="846" alt="screenshot3" src="https://github.com/user-attachments/assets/5beffa30-fb1d-45b1-b874-41e9a3676ca8" />
 
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+**Workflow:**
+1. 📸 **User** ➔ Captures Photo via Webcam
+2. 💻 **Frontend (JS/HTML)** ➔ Sends Base64 Image via POST Request
+3. ⚙️ **Backend (Express)** ➔ Forwards Image securely
+4. 🧠 **Gemini API** ➔ Analyzes image & generates roast
+5. ⚙️ **Backend** ➔ Sends Roast Text Back to Client
+6. 💻 **Frontend** ➔ Updates UI dynamically to display result
 
-For Hardware:
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+https://drive.google.com/file/d/1bAc7uGeQu-W9XsKsrMVkN8JMVSZ2lP3N/view?usp=drive_link
 
-# Additional Demos
-[Add any extra demo materials/links]
+
 
 ## Team Contributions
 - Joanna Jose: Set up the Node.js/Express server, implemented the Google Gemini API connection, and managed the routing
