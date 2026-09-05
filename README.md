@@ -2,54 +2,49 @@
 
 
 
-# [Project Name] 🎯
+# OUTFIT ROASTER 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: TRUSTTHEPROCESS
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: DWIDHY.K.S - [SSET]
+- Member 2: JOANNA JOSE - [SSET]
 
 ### Project Description
-[2-3 lines about what your project does]
+The AI Outfit Roaster is an interactive web application that uses your webcam to capture your current outfit and instantly judges your fashion sense. Powered by the Google Gemini API, the app analyzes your picture to deliver a ruthless, sarcastic, and witty roast of your wardrobe choices.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+We are solving the problem of having friends who are way too nice and supportive of your fashion choices.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+We built a highly judgmental AI that looks through your webcam and roasts your outfit with absolutely zero chill
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- html,javascript,css
+- express.js
+- generative ai,express
+- node.js,vscode,git
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
 
 ### Implementation
 For Software:
+
 # Installation
-[commands]
+npm install express @google/generative-ai dotenv cors
 
 # Run
-[commands]
+node server.js
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+
 
 ![Screenshot2](Add screenshot 2 here with proper name)
 *Add caption explaining what this shows*
@@ -89,9 +84,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Joanna Jose: Set up the Node.js/Express server, implemented the Google Gemini API connection, and managed the routing
+- Dwidhy.K.S: Handled the frontend design, HTML/CSS structure, and integrated the webcam capture logic using JavaScript
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
