@@ -3,78 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Outfit Roaster</title>
+    <title>AI Outfit Roaster | Welcome</title>
     <style>
-        :root { --bg-color: #121212; --text-color: #f0f0f0; --accent-color: #ff4757; --pane-bg: #1e1e1e; }
-        body { margin: 0; font-family: sans-serif; background-color: var(--bg-color); color: var(--text-color); display: flex; flex-direction: column; height: 100vh; }
-        header { text-align: center; padding: 1rem; background-color: #000; font-size: 1.5rem; font-weight: bold; border-bottom: 2px solid var(--accent-color); }
-        .container { display: flex; flex: 1; padding: 1rem; gap: 1rem; flex-wrap: wrap; }
-        .pane { flex: 1; min-width: 300px; background-color: var(--pane-bg); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        #webcam { width: 100%; max-width: 600px; border-radius: 8px; background-color: #000; transform: scaleX(-1); }
-        #roast-btn { margin-top: 1.5rem; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; color: white; background-color: var(--accent-color); border: none; border-radius: 5px; cursor: pointer; }
-        #roast-btn:hover { background-color: #ff6b81; }
-        #roast-btn:disabled { background-color: #555; cursor: not-allowed; }
-        .roast-content { text-align: center; width: 90%; }
-        #roast-text { font-size: 1.5rem; line-height: 1.6; margin-top: 1rem; font-style: italic; }
-        .loading { color: #aaa; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+        :root {
+            --bg-color: #121212;
+            --text-color: #f0f0f0;
+            --accent-color: #ff4757;
+        }
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+            color: #aaa;
+        }
+        .enter-btn {
+            padding: 1rem 3rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            background-color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .enter-btn:hover {
+            background-color: #ff6b81;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
-    <header>🌲 AI Outfit Roaster 🌲</header>
-    <div class="container">
-        <div class="pane camera-pane">
-            <video id="webcam" autoplay playsinline></video>
-            <button id="roast-btn">Roast My Fit!</button>
-        </div>
-        <div class="pane roast-pane">
-            <div class="roast-content">
-                <h2>The AI Verdict</h2>
-                <p id="roast-text">Stand in front of the camera and brace yourself. Click the button when ready.</p>
-            </div>
-        </div>
-    </div>
-    <script>
-        const video = document.getElementById('webcam');
-        const roastBtn = document.getElementById('roast-btn');
-        const roastText = document.getElementById('roast-text');
 
-        async function startCamera() {
-            try {
-                video.srcObject = await navigator.mediaDevices.getUserMedia({ video: true });
-            } catch (err) {
-                roastText.innerText = "Please allow camera access!";
-            }
-        }
+    <h1> AI Outfit Roaster </h1>
+    
+    <p>Do you think you have drip? Let the AI decide. Step in front of the camera and brace yourself for the most ruthless, painfully accurate roast of your wardrobe.</p>
+    
+    <!-- This links directly to your camera page -->
+    <a href="roast.html" class="enter-btn">Enter If You Dare</a>
 
-        async function generateRoast() {
-            roastBtn.disabled = true;
-            roastText.className = "loading";
-            roastText.innerText = "Scanning those tragic fashion choices...";
-
-            try {
-                const canvas = document.createElement('canvas');
-                canvas.width = video.videoWidth; canvas.height = video.videoHeight;
-                canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-                
-                const response = await fetch('/api/roast', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ image: canvas.toDataURL('image/jpeg', 0.8).split(',')[1] })
-                });
-
-                const data = await response.json();
-                roastText.innerText = data.roast ? `"${data.roast}"` : "Error generating roast.";
-            } catch (error) {
-                roastText.innerText = "Failed to connect to the server.";
-            }
-
-            roastText.className = "";
-            roastBtn.disabled = false;
-        }
-
-        startCamera();
-        roastBtn.addEventListener('click', generateRoast);
-    </script>
 </body>
 </html>
